@@ -7,9 +7,9 @@
     <% @posts.each do |post| %>
       <%= image_tag post.image_url, size: "250x200" if t.image? %>
       <%= post.title>
-      <%= link_to "詳細へ", tweet_path(post.id) %>
-      <%= link_to "編集する", edit_tweet_path(post.id) %>
-      <%= link_to "削除する", tweet_path(post.id), method: :delete %>
+      <%= link_to "詳細へ", post_path(post.id) %>
+      <%= link_to "編集する", edit_post_path(post.id) %>
+      <%= link_to "削除する", post_path(post.id), method: :delete %>
     <% end %>
   </tbody>
 </table>
