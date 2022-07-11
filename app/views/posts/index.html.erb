@@ -1,10 +1,16 @@
 <h1 class="text-center">Sneker Heads Posts</h1>
 <div class ="container">
   <% @posts.each do |post| %>
-    <%= image_tag post.image_url, size: "250x200" if post.image? %>
-    <%= post.title %>
-    <%= link_to "詳細へ", post_path(post.id) %>
-    <%= link_to "編集する", edit_post_path(post.id) %>
-    <%= link_to "削除する", post_path(post.id), method: :delete %>
+    <div class = "card" style="width: 18rem;">
+      <%= image_tag post.image_url, class:"card-img-top",size: "250x200" if post.image? %>
+      <div class="card-body">
+        <div class="card-title">
+          <%= post.title %>
+        </div>
+        <%= link_to "詳細へ", post_path(post.id), class:"btn btn-primary" %>
+        <%= link_to "編集する", edit_post_path(post.id) , class:"btn btn-primary" %><br>
+        <%= link_to "削除する", post_path(post.id), class:"btn btn-primary", method: :delete %>
+      </div>
+    </div>
   <% end %>
 </div>
