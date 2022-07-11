@@ -1,9 +1,10 @@
-<%= link_to "新規投稿へ", new_post_path %>
-<h1>Posts</h1>
-<% @posts.each do |post| %>
-  <%= image_tag post.image_url, size: "250x200" if post.image? %>
-  <%= post.title %>
-  <%= link_to "詳細へ", post_path(post.id) %>
-  <%= link_to "編集する", edit_post_path(post.id) %>
-  <%= link_to "削除する", post_path(post.id), method: :delete %>
-<% end %>
+<h1 class="text-center">Sneker Heads Posts</h1>
+<div class ="container">
+  <% @posts.each do |post| %>
+    <%= image_tag post.image_url, size: "250x200" if post.image? %>
+    <%= post.title %>
+    <%= link_to "詳細へ", post_path(post.id) %>
+    <%= link_to "編集する", edit_post_path(post.id) %>
+    <%= link_to "削除する", post_path(post.id), method: :delete %>
+  <% end %>
+</div>
